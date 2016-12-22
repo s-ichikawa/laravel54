@@ -45,7 +45,7 @@ class SendgridMailSample extends Command
                 ->to([
                     'ichikawa.shingo.0829@gmail.com',
                 ])
-                ->replyTo('ichikawa.shingo.0829+replyto@gmail.com', 'おれだ！')
+                ->replyTo('ichikawa.shingo.0829+replyto@gmail.com', 's-ichikawa！')
                 ->embedData([
                     'personalizations' => [
                         [
