@@ -40,6 +40,7 @@ class InvoicePaid extends Notification
      */
     public function toMail($notifiable)
     {
+        var_dump($notifiable);
         return (new MailMessage)
                     ->greeting('This is s-ichikawa')
                     ->line('The introduction to the notification.')
