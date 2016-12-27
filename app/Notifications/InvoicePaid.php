@@ -45,6 +45,7 @@ class InvoicePaid extends Notification
                     ->greeting('This is s-ichikawa')
                     ->line('The introduction to the notification.')
                     ->action('Notification Action', 'https://laravel.com')
+                    ->action('TEST', 'http://example.com')
                     ->line('Thank you for using our application!');
     }
 
