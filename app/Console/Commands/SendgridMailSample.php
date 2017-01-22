@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Mail\SendGridSample;
 use Illuminate\Console\Command;
 use Illuminate\Mail\Message;
 
@@ -38,30 +39,32 @@ class SendgridMailSample extends Command
      */
     public function handle()
     {
-        \Mail::send('emails.embed_body_variable', [], function (Message $message) {
-            $message
-                ->subject('embed subject variable')
-                ->from('ichikawa.shingo.0829@gmail.com', 's-ichikawa')
-                ->to([
-                    'ichikawa.shingo.0829@gmail.com',
-                ])
-                ->replyTo('ichikawa.shingo.0829+replyto@gmail.com', 's-ichikawa！')
-                ->embedData([
-                    'personalizations' => [
-                        [
-                            'substitutions' => [
-                                ':myname' => 's-ichikawa',
-                            ],
-                        ],
-                    ],
-                    'template_id'      => config('sendgrid.templates.sample'),
-                    'asm'              => [
-                        'group_id' => 5221,
-                        'groups_to_display' => [
-                            5221
-                        ]
-                    ],
-                ], 'sendgrid/x-smtpapi');
-        });
+        $result = \Mail::to('ichikawa.shingo.0829@gmail.com')->send(new SendGridSample());
+        var_dump($result);
+//        \Mail::send('emails.embed_body_variable', [], function (Message $message) {
+//            $message
+//                ->subject('embed subject variable')
+//                ->from('ichikawa.shingo.0829@gmail.com', 's-ichikawa')
+//                ->to([
+//                    'ichikawa.shingo.0829@gmail.com',
+//                ])
+//                ->replyTo('ichikawa.shingo.0829+replyto@gmail.com', 's-ichikawa！')
+//                ->embedData([
+//                    'personalizations' => [
+//                        [
+//                            'substitutions' => [
+//                                ':myname' => 's-ichikawa',
+//                            ],
+//                        ],
+//                    ],
+//                    'template_id'      => config('sendgrid.templates.sample'),
+//                    'asm'              => [
+//                        'group_id' => 5221,
+//                        'groups_to_display' => [
+//                            5221
+//                        ]
+//                    ],
+//                ], 'sendgrid/x-smtpapi');
+//        });
     }
 }
