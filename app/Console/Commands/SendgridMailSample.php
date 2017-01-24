@@ -39,32 +39,26 @@ class SendgridMailSample extends Command
      */
     public function handle()
     {
-        $result = \Mail::to('ichikawa.shingo.0829@gmail.com')->send(new SendGridSample());
-        var_dump($result);
-//        \Mail::send('emails.embed_body_variable', [], function (Message $message) {
-//            $message
-//                ->subject('embed subject variable')
-//                ->from('ichikawa.shingo.0829@gmail.com', 's-ichikawa')
-//                ->to([
-//                    'ichikawa.shingo.0829@gmail.com',
-//                ])
-//                ->replyTo('ichikawa.shingo.0829+replyto@gmail.com', 's-ichikawa！')
-//                ->embedData([
-//                    'personalizations' => [
-//                        [
-//                            'substitutions' => [
-//                                ':myname' => 's-ichikawa',
-//                            ],
-//                        ],
-//                    ],
-//                    'template_id'      => config('sendgrid.templates.sample'),
-//                    'asm'              => [
-//                        'group_id' => 5221,
-//                        'groups_to_display' => [
-//                            5221
-//                        ]
-//                    ],
-//                ], 'sendgrid/x-smtpapi');
-//        });
+        $cid = uniqid();
+        \Mail::send('emails.embed_body_variable', ['cid' => $cid], function (Message $message) use ($cid) {
+            $message
+                ->subject('embed subject variable')
+                ->from('ichikawa.shingo.0829@gmail.com', 's-ichikawa')
+                ->to([
+                    'ichikawa.shingo.0829@gmail.com',
+                ])
+                ->replyTo('ichikawa.shingo.0829+replyto@gmail.com', 's-ichikawa！')
+                ->embedData([
+                    'attachments' => [
+                        [
+                            'content'     => base64_encode(file_get_contents(resource_path('video/SampleVideo.mp4'))),
+                            'type'        => 'video/mp4',
+                            'filename'    => 'SampleVideo.mp4',
+                            'disposition' => 'inline',
+                            'content_id'  => $cid
+                        ],
+                    ],
+                ], 'sendgrid/x-smtpapi');
+        });
     }
 }
