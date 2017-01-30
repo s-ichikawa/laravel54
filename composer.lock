@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "6729323a558df191f73517b1cd1fba02",
-    "content-hash": "4a92456a6254d869f31791158db06493",
+    "hash": "7a5db90c5b728521c71a20951a6a0532",
+    "content-hash": "8f5e64533013579f483e34724e88e25d",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -289,16 +289,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.4.4",
+            "version": "v5.4.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "4274ed5646f8a9ec0a4b201aab7440e2890610a1"
+                "reference": "6f2395d3a97728c1150da083898d1f5a2904b3a0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/4274ed5646f8a9ec0a4b201aab7440e2890610a1",
-                "reference": "4274ed5646f8a9ec0a4b201aab7440e2890610a1",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/6f2395d3a97728c1150da083898d1f5a2904b3a0",
+                "reference": "6f2395d3a97728c1150da083898d1f5a2904b3a0",
                 "shasum": ""
             },
             "require": {
@@ -414,7 +414,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2017-01-26 14:29:30"
+            "time": "2017-01-26 20:30:57"
         },
         {
             "name": "league/flysystem",
@@ -903,16 +903,16 @@
         },
         {
             "name": "s-ichikawa/laravel-sendgrid-driver",
-            "version": "1.2.0",
+            "version": "dev-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/s-ichikawa/laravel-sendgrid-driver.git",
-                "reference": "a033523c0688d5bcf6a49a23d508faea913e244a"
+                "reference": "a6af5b23afb3b522c1bfd1bb0ced887cd08bb62f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/s-ichikawa/laravel-sendgrid-driver/zipball/a033523c0688d5bcf6a49a23d508faea913e244a",
-                "reference": "a033523c0688d5bcf6a49a23d508faea913e244a",
+                "url": "https://api.github.com/repos/s-ichikawa/laravel-sendgrid-driver/zipball/a6af5b23afb3b522c1bfd1bb0ced887cd08bb62f",
+                "reference": "a6af5b23afb3b522c1bfd1bb0ced887cd08bb62f",
                 "shasum": ""
             },
             "require": {
@@ -941,7 +941,7 @@
                 }
             ],
             "description": "This library adds a 'sendgrid' mail driver to Laravel.",
-            "time": "2017-01-25 15:29:03"
+            "time": "2017-01-27 14:35:53"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -2152,16 +2152,16 @@
         },
         {
             "name": "myclabs/deep-copy",
-            "version": "1.5.5",
+            "version": "1.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/myclabs/DeepCopy.git",
-                "reference": "399c1f9781e222f6eb6cc238796f5200d1b7f108"
+                "reference": "5a5a9fc8025a08d8919be87d6884d5a92520cefe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/399c1f9781e222f6eb6cc238796f5200d1b7f108",
-                "reference": "399c1f9781e222f6eb6cc238796f5200d1b7f108",
+                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/5a5a9fc8025a08d8919be87d6884d5a92520cefe",
+                "reference": "5a5a9fc8025a08d8919be87d6884d5a92520cefe",
                 "shasum": ""
             },
             "require": {
@@ -2190,7 +2190,7 @@
                 "object",
                 "object graph"
             ],
-            "time": "2016-10-31 17:19:45"
+            "time": "2017-01-26 22:05:40"
         },
         {
             "name": "phpdocumentor/reflection-common",
@@ -3463,7 +3463,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "s-ichikawa/laravel-sendgrid-driver": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
