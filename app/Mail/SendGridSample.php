@@ -5,7 +5,6 @@ namespace App\Mail;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
-use Sichikawa\LaravelSendgridDriver\Api\Personalize;
 use Sichikawa\LaravelSendgridDriver\SendGrid;
 
 class SendGridSample extends Mailable
@@ -29,10 +28,6 @@ class SendGridSample extends Mailable
      */
     public function build()
     {
-        $personalize = new Personalize();
-        $personalize->setTo('ichikawa.shingo.0829+testichi@gmail.com')
-            ->addCustomArgs('test', 'sisi');
-
         return $this
             ->view('emails.embed_body_variable')
             ->subject('embed subject variable')
@@ -40,8 +35,15 @@ class SendGridSample extends Mailable
             ->to([
                 'ichikawa.shingo.0829@gmail.com',
             ])
-            ->addPersonalizations($personalize)
-            ->sendgrid()
+            ->sendgrid([
+                'personalizations' => [
+                    [
+                        'substitutions' => [
+                            ':myname' => 's-ichikawa',
+                        ],
+                    ],
+                ],
+            ])
             ->withSwiftMessage(function (\Swift_Message $message) {
                 var_dump($message->getHeaders()->get('X-Message-Id'));
             });
