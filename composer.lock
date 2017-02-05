@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "6729323a558df191f73517b1cd1fba02",
-    "content-hash": "4a92456a6254d869f31791158db06493",
+    "hash": "a93d13477bdd44d0330d52f162981ad6",
+    "content-hash": "d72256a9ab5fae5ed835e3022617e458",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -945,6 +945,45 @@
             ],
             "description": "This library adds a 'sendgrid' mail driver to Laravel.",
             "time": "2017-01-30 14:35:32"
+        },
+        {
+            "name": "s-ichikawa/sendgrid-api-builder",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/s-ichikawa/sendgrid-api-builder.git",
+                "reference": "477119650831f341b910f0eeb81cbc62b45995a7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/s-ichikawa/sendgrid-api-builder/zipball/477119650831f341b910f0eeb81cbc62b45995a7",
+                "reference": "477119650831f341b910f0eeb81cbc62b45995a7",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4"
+            },
+            "require-dev": {
+                "phpunit/phpunit": ">=4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Sichikawa\\SendgridApiBuilder\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "shingo.ichikawa",
+                    "email": "ichikawa.shingo.0829@gmail.com"
+                }
+            ],
+            "description": "This library build a sendgrid api.",
+            "time": "2017-02-02 11:06:32"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -3466,7 +3505,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "s-ichikawa/sendgrid-api-builder": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
