@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "34cdfd8f6e4be36e218eee970109f5a3",
-    "content-hash": "ea8baf5b4ac582fcbc5344711d4162b4",
+    "hash": "45ebecb06b88cbc502d660fc75710857",
+    "content-hash": "a9eb93cc49f5c3b73a3d828bf58d1dc5",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -231,16 +231,16 @@
         },
         {
             "name": "guzzlehttp/psr7",
-            "version": "1.3.1",
+            "version": "1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/psr7.git",
-                "reference": "5c6447c9df362e8f8093bda8f5d8873fe5c7f65b"
+                "reference": "04a6d1a00ea5da0727ee94309a9f0d3dbaecb569"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/psr7/zipball/5c6447c9df362e8f8093bda8f5d8873fe5c7f65b",
-                "reference": "5c6447c9df362e8f8093bda8f5d8873fe5c7f65b",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/04a6d1a00ea5da0727ee94309a9f0d3dbaecb569",
+                "reference": "04a6d1a00ea5da0727ee94309a9f0d3dbaecb569",
                 "shasum": ""
             },
             "require": {
@@ -276,16 +276,23 @@
                     "name": "Michael Dowling",
                     "email": "mtdowling@gmail.com",
                     "homepage": "https://github.com/mtdowling"
+                },
+                {
+                    "name": "Tobias Schultze",
+                    "homepage": "https://github.com/Tobion"
                 }
             ],
-            "description": "PSR-7 message implementation",
+            "description": "PSR-7 message implementation that also provides common utility methods",
             "keywords": [
                 "http",
                 "message",
+                "request",
+                "response",
                 "stream",
-                "uri"
+                "uri",
+                "url"
             ],
-            "time": "2016-06-24 23:00:38"
+            "time": "2017-02-21 01:20:32"
         },
         {
             "name": "laravel/framework",
@@ -900,51 +907,6 @@
                 "uuid"
             ],
             "time": "2016-11-22 19:21:44"
-        },
-        {
-            "name": "s-ichikawa/laravel-sendgrid-driver",
-            "version": "dev-dev",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/s-ichikawa/laravel-sendgrid-driver.git",
-                "reference": "71a9a8a5ceb663942340ed36ad1948d9c1090735"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/s-ichikawa/laravel-sendgrid-driver/zipball/71a9a8a5ceb663942340ed36ad1948d9c1090735",
-                "reference": "71a9a8a5ceb663942340ed36ad1948d9c1090735",
-                "shasum": ""
-            },
-            "require": {
-                "guzzlehttp/guzzle": "~5.3|~6.2",
-                "illuminate/mail": "~5.1"
-            },
-            "require-dev": {
-                "illuminate/container": "~5.1",
-                "illuminate/filesystem": "~5.1",
-                "phpunit/phpunit": ">=4.0"
-            },
-            "suggest": {
-                "s-ichikawa/sendgrid-api-builder": "support to build json for sendgrid api"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Sichikawa\\LaravelSendgridDriver\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "shingo.ichikawa",
-                    "email": "ichikawa.shingo.0829@gmail.com"
-                }
-            ],
-            "description": "This library adds a 'sendgrid' mail driver to Laravel.",
-            "time": "2017-01-30 14:44:42"
         },
         {
             "name": "s-ichikawa/sendgrid-api-builder",
@@ -1867,16 +1829,16 @@
     "packages-dev": [
         {
             "name": "barryvdh/laravel-ide-helper",
-            "version": "v2.3.0",
+            "version": "v2.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/barryvdh/laravel-ide-helper.git",
-                "reference": "555d3e37009bdb78f5d8bcea6eb8a816529a5cfa"
+                "reference": "25c8de637ddf79567d721c1856616be01db7b960"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/barryvdh/laravel-ide-helper/zipball/555d3e37009bdb78f5d8bcea6eb8a816529a5cfa",
-                "reference": "555d3e37009bdb78f5d8bcea6eb8a816529a5cfa",
+                "url": "https://api.github.com/repos/barryvdh/laravel-ide-helper/zipball/25c8de637ddf79567d721c1856616be01db7b960",
+                "reference": "25c8de637ddf79567d721c1856616be01db7b960",
                 "shasum": ""
             },
             "require": {
@@ -1899,7 +1861,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.2-dev"
+                    "dev-master": "2.3-dev"
                 }
             },
             "autoload": {
@@ -1929,7 +1891,7 @@
                 "phpstorm",
                 "sublime"
             ],
-            "time": "2017-02-13 19:20:12"
+            "time": "2017-02-20 12:54:53"
         },
         {
             "name": "barryvdh/reflection-docblock",
@@ -3506,7 +3468,6 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "s-ichikawa/laravel-sendgrid-driver": 20,
         "s-ichikawa/sendgrid-api-builder": 20
     },
     "prefer-stable": true,

@@ -5,11 +5,10 @@ namespace App\Mail;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
-use Sichikawa\LaravelSendgridDriver\SendGrid;
 
 class SendGridSample extends Mailable
 {
-    use Queueable, SerializesModels, SendGrid;
+    use Queueable, SerializesModels;
 
     /**
      * Create a new message instance.
@@ -34,15 +33,6 @@ class SendGridSample extends Mailable
             ->from('ichikawa.shingo.0829@gmail.com', 's-ichikawa')
             ->to([
                 'ichikawa.shingo.0829@gmail.com',
-            ])
-            ->sendgrid([
-                'personalizations' => [
-                    [
-                        'substitutions' => [
-                            ':myname' => 's-ichikawa',
-                        ],
-                    ],
-                ],
             ])
             ->withSwiftMessage(function (\Swift_Message $message) {
                 var_dump($message->getHeaders()->get('X-Message-Id'));
