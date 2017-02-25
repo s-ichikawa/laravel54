@@ -34,15 +34,6 @@ class SendGridSample extends Mailable
             ->to([
                 'ichikawa.shingo.0829@gmail.com',
             ])
-            ->exData([
-                'personalizations' => [
-                    [
-                        'substitutions' => [
-                            ':myname' => 's-ichikawa',
-                        ],
-                    ],
-                ],
-            ])
             ->withSwiftMessage(function (\Swift_Message $message) {
                 var_dump($message->getHeaders()->get('X-Message-Id'));
             });

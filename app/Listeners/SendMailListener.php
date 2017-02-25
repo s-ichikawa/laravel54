@@ -3,6 +3,7 @@
 namespace App\Listeners;
 
 use App\Events\send_mail;
+use App\Events\SendMail;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
@@ -21,10 +22,9 @@ class SendMailListener
     /**
      * Handle the event.
      *
-     * @param  send_mail  $event
-     * @return void
+     * @param SendMail $event
      */
-    public function handle(send_mail $event)
+    public function handle(SendMail $event)
     {
         //
     }
