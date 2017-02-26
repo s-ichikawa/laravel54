@@ -27,5 +27,7 @@ class SendMailListener
     public function handle(SendMail $event)
     {
         //
+        var_dump('asd');
+        \Log::debug('asd');
     }
 }

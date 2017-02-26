@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Events\SendMail;
 use App\Mail\SendGridSample;
 use Illuminate\Console\Command;
 use Illuminate\Mail\Message;
@@ -39,6 +40,8 @@ class SendgridMailSample extends Command
      */
     public function handle()
     {
+        var_dump('asd');
+        event(new SendMail());
         $result = \Mail::to('ichikawa.shingo.0829@gmail.com')->send(new SendGridSample());
 //        \Mail::send('emails.embed_body_variable', [], function (Message $message) {
 //            $message
