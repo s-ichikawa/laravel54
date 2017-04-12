@@ -7,13 +7,14 @@
     "repositories": [
         {
             "type": "path",
-            "url": "/Users/ichikawashingo/dev/framework"
+            "url": "/Users/ichikawashingo/dev/laravel-sendgrid-driver"
         }
     ],
     "require": {
         "php": ">=5.6.4",
-        "s-ichikawa/framework": "5.4.*",
-        "guzzlehttp/guzzle": "^6.2"
+        "laravel/framework": "5.4.*",
+        "s-ichikawa/sendgrid-api-builder": "dev-master",
+        "s-ichikawa/laravel-sendgrid-driver-dev": "dev-dev"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

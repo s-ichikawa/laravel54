@@ -178,6 +178,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        \Sichikawa\LaravelSendgridDriver\MailServiceProvider::class,
+        \Sichikawa\LaravelSendgridDriver\SendgridTransportServiceProvider::class,
         \Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
     ],
 

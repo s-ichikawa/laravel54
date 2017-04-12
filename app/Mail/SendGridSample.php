@@ -4,12 +4,13 @@ namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
-use Illuminate\Mail\Message;
 use Illuminate\Queue\SerializesModels;
+use Sichikawa\LaravelSendgridDriver\SendGrid;
+use Sichikawa\LaravelSendgridDriver\Transport\SendgridV3Transport;
 
 class SendGridSample extends Mailable
 {
-    use Queueable, SerializesModels;
+    use Queueable, SerializesModels, SendGrid;
 
     /**
      * Create a new message instance.
@@ -35,10 +36,9 @@ class SendGridSample extends Mailable
             ->to([
                 'ichikawa.shingo.0829@gmail.com',
             ])
-            ->withSwiftMessage(function (Message\SendGridMessage $message) {
-                $message->setApi(['test']);
-                var_dump($message->getHeaders()->getAll('X-Message-Id'));
-            });
+            ->attachData([
+                'categories' => ['category1'],
+            ], SendgridV3Transport::SMTP_API_NAME);
     }
 
 }
