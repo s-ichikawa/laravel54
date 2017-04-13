@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use App\Mail\SendGridSample;
 use Illuminate\Console\Command;
+use Illuminate\Mail\Message;
 use Mail;
 
 class SendgridMailSample extends Command
@@ -41,7 +42,33 @@ class SendgridMailSample extends Command
     {
 //        event(new SendMail());
         Mail::send(new SendGridSample());
-        \Mail::send('emails.embed_body_variable', [], function ($message) {
+        \Mail::send('emails.embed_body_variable', [], function (Message $message) {
+            $message
+                ->subject('embed subject variable')
+                ->from('ichikawa.shingo.0829@gmail.com', 's-ichikawa')
+                ->to([
+                    'ichikawa.shingo.0829@gmail.com',
+                ])
+                ->replyTo('ichikawa.shingo.0829+replyto@gmail.com', 's-ichikawa！')
+                ->embedData(json_encode([
+                    'personalizations' => [
+                        [
+                            'substitutions' => [
+                                ':myname' => 's-ichikawa',
+                            ],
+                        ],
+                    ],
+                    'template_id'      => config('sendgrid.templates.sample'),
+                    'asm'              => [
+                        'group_id' => 5221,
+                        'groups_to_display' => [
+                            5221
+                        ]
+                    ],
+                    'categories' => ['category2'],
+                ]), 'sendgrid/x-smtpapi');
+        });
+        Mail::raw('test', function (Message $message) {
             $message
                 ->subject('embed subject variable')
                 ->from('ichikawa.shingo.0829@gmail.com', 's-ichikawa')
@@ -64,7 +91,7 @@ class SendgridMailSample extends Command
                             5221
                         ]
                     ],
-                    'categories' => ['category2'],
+                    'categories' => ['category3'],
                 ], 'sendgrid/x-smtpapi');
         });
     }

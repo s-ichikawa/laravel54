@@ -36,9 +36,9 @@ class SendGridSample extends Mailable
             ->to([
                 'ichikawa.shingo.0829@gmail.com',
             ])
-            ->attachData([
+            ->sendgrid([
                 'categories' => ['category1'],
-            ], SendgridV3Transport::SMTP_API_NAME);
+            ]);
     }
 
 }
