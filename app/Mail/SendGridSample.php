@@ -6,7 +6,6 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Sichikawa\LaravelSendgridDriver\SendGrid;
-use Sichikawa\LaravelSendgridDriver\Transport\SendgridV3Transport;
 
 class SendGridSample extends Mailable
 {
