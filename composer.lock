@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "135b2ab15a7ba6925e75bfc26b4bf1f6",
-    "content-hash": "65c18531b31bffed62086fbc72294631",
+    "hash": "f17f4af48df3bd3f367cd4203d4649c4",
+    "content-hash": "8f60c1e80cfaa07bbf84cc17da0237f9",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -909,17 +909,22 @@
             "time": "2017-03-26 20:37:53"
         },
         {
-            "name": "s-ichikawa/laravel-sendgrid-driver-dev",
+            "name": "s-ichikawa/laravel-sendgrid-driver",
             "version": "dev-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/s-ichikawa/laravel-sendgrid-driver.git",
+                "reference": "997facdb29236d4dec9018835073df283d6924c9"
+            },
             "dist": {
-                "type": "path",
-                "url": "/Users/ichikawashingo/dev/laravel-sendgrid-driver",
-                "reference": "e47bd74e7a0950f2b6c3c1577ba80cab1c0b910d",
-                "shasum": null
+                "type": "zip",
+                "url": "https://api.github.com/repos/s-ichikawa/laravel-sendgrid-driver/zipball/997facdb29236d4dec9018835073df283d6924c9",
+                "reference": "997facdb29236d4dec9018835073df283d6924c9",
+                "shasum": ""
             },
             "require": {
                 "guzzlehttp/guzzle": "~5.3|~6.2",
-                "illuminate/mail": "~5.4"
+                "illuminate/mail": "~5.1"
             },
             "require-dev": {
                 "illuminate/container": "~5.1",
@@ -935,11 +940,7 @@
                     "Sichikawa\\LaravelSendgridDriver\\": "src"
                 }
             },
-            "autoload-dev": {
-                "files": [
-                    "tests/TestCase.php"
-                ]
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -949,7 +950,8 @@
                     "email": "ichikawa.shingo.0829@gmail.com"
                 }
             ],
-            "description": "This library adds a 'sendgrid' mail driver to Laravel."
+            "description": "This library adds a 'sendgrid' mail driver to Laravel.",
+            "time": "2017-04-14 23:24:12"
         },
         {
             "name": "s-ichikawa/sendgrid-api-builder",
@@ -2140,12 +2142,12 @@
             "version": "0.9.9",
             "source": {
                 "type": "git",
-                "url": "https://github.com/padraic/mockery.git",
+                "url": "https://github.com/mockery/mockery.git",
                 "reference": "6fdb61243844dc924071d3404bb23994ea0b6856"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/padraic/mockery/zipball/6fdb61243844dc924071d3404bb23994ea0b6856",
+                "url": "https://api.github.com/repos/mockery/mockery/zipball/6fdb61243844dc924071d3404bb23994ea0b6856",
                 "reference": "6fdb61243844dc924071d3404bb23994ea0b6856",
                 "shasum": ""
             },
@@ -3520,7 +3522,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "s-ichikawa/sendgrid-api-builder": 20,
-        "s-ichikawa/laravel-sendgrid-driver-dev": 20
+        "s-ichikawa/laravel-sendgrid-driver": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

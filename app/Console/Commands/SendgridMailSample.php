@@ -42,7 +42,7 @@ class SendgridMailSample extends Command
     {
 //        event(new SendMail());
         Mail::send(new SendGridSample());
-        \Mail::send('emails.embed_body_variable', [], function (Message $message) {
+        \Mail::send(['emails.embed_body_variable', 'emails.phpcon'], [], function (Message $message) {
             $message
                 ->subject('embed subject variable')
                 ->from('ichikawa.shingo.0829@gmail.com', 's-ichikawa')
@@ -66,7 +66,8 @@ class SendgridMailSample extends Command
                         ]
                     ],
                     'categories' => ['category2'],
-                ]), 'sendgrid/x-smtpapi');
+                ]), 'sendgrid/x-smtpapi')
+            ;
         });
         Mail::raw('test', function (Message $message) {
             $message
