@@ -69,31 +69,5 @@ class SendgridMailSample extends Command
                 ]), 'sendgrid/x-smtpapi')
             ;
         });
-        Mail::raw('test', function (Message $message) {
-            $message
-                ->subject('embed subject variable')
-                ->from('ichikawa.shingo.0829@gmail.com', 's-ichikawa')
-                ->to([
-                    'ichikawa.shingo.0829@gmail.com',
-                ])
-                ->replyTo('ichikawa.shingo.0829+replyto@gmail.com', 's-ichikawa！')
-                ->embedData([
-                    'personalizations' => [
-                        [
-                            'substitutions' => [
-                                ':myname' => 's-ichikawa',
-                            ],
-                        ],
-                    ],
-                    'template_id'      => config('sendgrid.templates.sample'),
-                    'asm'              => [
-                        'group_id' => 5221,
-                        'groups_to_display' => [
-                            5221
-                        ]
-                    ],
-                    'categories' => ['category3'],
-                ], 'sendgrid/x-smtpapi');
-        });
     }
 }
