@@ -60,14 +60,13 @@ class SendgridMailSample extends Command
                     ],
                     'template_id'      => config('sendgrid.templates.sample'),
                     'asm'              => [
-                        'group_id' => 5221,
+                        'group_id'          => 5221,
                         'groups_to_display' => [
-                            5221
-                        ]
+                            5221,
+                        ],
                     ],
-                    'categories' => ['category2'],
-                ]), 'sendgrid/x-smtpapi')
-            ;
+                    'categories'       => ['category2'],
+                ]), 'sendgrid/x-smtpapi');
         });
     }
 }
