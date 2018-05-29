@@ -28,12 +28,16 @@ class SendGridSample extends Mailable
      */
     public function build()
     {
+        $pdfData = file_get_contents(__DIR__ . '/sample.pdf');
         return $this
             ->view('emails.embed_body_variable')
             ->subject('embed subject variable')
             ->from('ichikawa.shingo.0829@gmail.com', 's-ichikawa')
             ->to([
                 'ichikawa.shingo.0829@gmail.com',
+            ])
+            ->attachData($pdfData, 'sample.pdf', [
+                'mime' => 'application/pdf',
             ])
             ->sendgrid([
                 'categories' => ['category1'],
