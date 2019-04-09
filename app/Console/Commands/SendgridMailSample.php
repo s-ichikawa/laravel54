@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Listeners\MailEventListener;
 use App\Mail\SendGridSample;
 use Illuminate\Console\Command;
 use Illuminate\Mail\Message;
@@ -41,7 +42,8 @@ class SendgridMailSample extends Command
     public function handle()
     {
 //        event(new SendMail());
-        Mail::send(new SendGridSample());
+//        Mail::send(new SendGridSample());
+        Mail::getSwiftMailer()->registerPlugin(new MailEventListener());
         \Mail::send(['emails.embed_body_variable', 'emails.phpcon'], [], function (Message $message) {
             $message
                 ->subject('embed subject variable')
